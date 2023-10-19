@@ -149,17 +149,10 @@ public class BukkitBaseCommand<T> extends BukkitCommand {
                 }
             }
 
-            return injector.getInstance(CommandService.class)
-                    .getParser(Key.get(String.class))
-                    .getSuggestions(new WrappedSender(sender), currentNode.getContext(), lastWord);
+            return injector.getInstance(CommandService.class).getParser(Key.get(String.class)).getSuggestions(new WrappedSender(sender), currentNode.getContext(), lastWord);
         }
 
-        return currentNode.getChildNodes()
-                .stream()
-                .map(node -> node.getContext().getName())
-                .filter(name -> StringUtil.startsWithIgnoreCase(name, lastWord))
-                .sorted(String.CASE_INSENSITIVE_ORDER)
-                .collect(Collectors.toList());
+        return currentNode.getChildNodes().stream().map(node -> node.getContext().getName()).filter(name -> StringUtil.startsWithIgnoreCase(name, lastWord)).sorted(String.CASE_INSENSITIVE_ORDER).collect(Collectors.toList());
     }
 
     /* Send the usage message from any node to
@@ -199,13 +192,7 @@ public class BukkitBaseCommand<T> extends BukkitCommand {
         builder.append("&cUsage for ").append(pathUsage).append(":\n");
 
         for (CommandNode<T> childNode : node.getChildNodes()) {
-            builder.append("&c/")
-                    .append(pathUsage)
-                    .append(" ")
-                    .append(childNode.getContext().getName())
-                    .append(" ")
-                    .append(childNode.getContext().getUsage())
-                    .append("\n");
+            builder.append("&c/").append(pathUsage).append(" ").append(childNode.getContext().getName()).append(" ").append(childNode.getContext().getUsage()).append("\n");
         }
 
         sender.sendMessage(color(builder.toString()));

@@ -44,9 +44,7 @@ class InternalCommandNode<T> implements CommandNode<T> {
 
     @Override
     public CommandNode<T> registerChildNode(final CommandContext<T> context, final Method method) {
-        final CommandNode<T> childNode =
-                new InternalCommandNode<>(
-                        false, Lists.newArrayList(), this, context, this.type, this.typeClass, method);
+        final CommandNode<T> childNode = new InternalCommandNode<>(false, Lists.newArrayList(), this, context, this.type, this.typeClass, method);
 
         this.childNodes.add(childNode);
         return childNode;

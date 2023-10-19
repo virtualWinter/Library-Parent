@@ -72,15 +72,12 @@ public class InternalCommandService implements CommandService {
          * After that we register the command to bukkit's
          * command map. */
 
-        Arrays.stream(aClass.getDeclaredMethods())
-                .filter(method -> {
-                    method.setAccessible(true); return method.isAnnotationPresent(Command.class);
-                })
-                .sorted(Comparator.comparingInt(method -> {
-                    final Command command = method.getAnnotation(Command.class);
-                    return command.aliases()[0].split(" ").length;
-                }))
-                .forEach(method -> registerNode(aClass, instance, method));
+        Arrays.stream(aClass.getDeclaredMethods()).filter(method -> {
+            method.setAccessible(true); return method.isAnnotationPresent(Command.class);
+        }).sorted(Comparator.comparingInt(method -> {
+            final Command command = method.getAnnotation(Command.class);
+            return command.aliases()[0].split(" ").length;
+        })).forEach(method -> registerNode(aClass, instance, method));
 
         AbstractCommandRegistrar registrar = registrarProvider.get();
 

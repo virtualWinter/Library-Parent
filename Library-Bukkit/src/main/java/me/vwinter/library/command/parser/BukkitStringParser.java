@@ -27,11 +27,7 @@ public class BukkitStringParser implements ArgumentParser<String> {
         Player player = sender.get();
 
         if (lastWord.isEmpty()) {
-            return player.getServer().getOnlinePlayers()
-                    .stream()
-                    .filter(player::canSee)
-                    .map(Player::getName)
-                    .collect(Collectors.toList());
+            return player.getServer().getOnlinePlayers().stream().filter(player::canSee).map(Player::getName).collect(Collectors.toList());
         }
 
         List<String> list = new ArrayList<>();

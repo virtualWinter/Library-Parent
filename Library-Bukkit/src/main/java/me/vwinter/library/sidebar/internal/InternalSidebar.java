@@ -25,8 +25,8 @@ class InternalSidebar implements Sidebar {
 
         /* Register the objective if absent and add 16
          * teams with unique entries */
-        if (scoreboard.getObjective("vertic") == null)
-            scoreboard.registerNewObjective("vertic", "dummy").setDisplayName("vertic");
+        if (scoreboard.getObjective("library") == null)
+            scoreboard.registerNewObjective("library", "dummy").setDisplayName("library");
 
         for (int i = 0; i < 16; i++) {
             getTeam(i).addEntry(ChatColor.values()[i].toString());
@@ -40,7 +40,7 @@ class InternalSidebar implements Sidebar {
         /* Substring title if over 32 characters and
          * update the objectives display-name */
         title = title.length() > 32 ? title.substring(0, 32) : title;
-        Objective objective = getScoreboard().getObjective("vertic");
+        Objective objective = getScoreboard().getObjective("library");
 
         objective.setDisplayName(color(title));
     }
@@ -66,7 +66,7 @@ class InternalSidebar implements Sidebar {
 
     @Override
     public void show() {
-        getScoreboard().getObjective("vertic").setDisplaySlot(DisplaySlot.SIDEBAR);
+        getScoreboard().getObjective("library").setDisplaySlot(DisplaySlot.SIDEBAR);
         this.showing = true;
     }
 
@@ -97,7 +97,7 @@ class InternalSidebar implements Sidebar {
 
     private void updateLine(final String string, final int line) {
         final Scoreboard scoreboard = getScoreboard();
-        Objective objective = scoreboard.getObjective("vertic");
+        Objective objective = scoreboard.getObjective("library");
 
         String[] prefixSuffix = getPrefixSuffix(string);
 

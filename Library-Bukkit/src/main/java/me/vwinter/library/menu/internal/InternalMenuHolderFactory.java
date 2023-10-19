@@ -36,12 +36,7 @@ public class InternalMenuHolderFactory implements MenuHolderFactory {
             copiedAliases = new String[]{""};
         }
 
-        final MenuContext context = new MenuContextBuilder()
-                .named(meta.aliases()[0])
-                .withAliases(copiedAliases)
-                .withRows(meta.rows())
-                .titled(ChatColor.translateAlternateColorCodes('&', meta.title()))
-                .build();
+        final MenuContext context = new MenuContextBuilder().named(meta.aliases()[0]).withAliases(copiedAliases).withRows(meta.rows()).titled(ChatColor.translateAlternateColorCodes('&', meta.title())).build();
 
         final MenuHolder holder = new InternalMenuHolder(context, menu, UUID.randomUUID(), meta.aliases()[0]);
         store.add(holder);

@@ -19,7 +19,7 @@ public class DefaultSidebarProvider implements SidebarProvider {
 
     @Override
     public Function<Player, String> getTitle() {
-        return player -> "&dVertic";
+        return player -> "&bCatMC";
     }
 
     @Override
