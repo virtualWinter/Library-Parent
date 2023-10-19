@@ -1,0 +1,6 @@
+name: Library
+main: me.vwinter.library.Library
+version: ${parent.version}
+api-version: 1.13
+author: vWinter
+description: ${parent.description}
