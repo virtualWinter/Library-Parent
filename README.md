@@ -1,7 +1,6 @@
 # Library-Parent
 
 ## Examples
-
 ### 1. Module
 
 ```java
