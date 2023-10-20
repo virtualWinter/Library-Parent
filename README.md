@@ -64,7 +64,7 @@ public class TestSidebarProvider implements SidebarProvider {
     private final Server server;
 
     @Inject
-    public DefaultSidebarProvider(final Server server) {
+    public TestSidebarProvider(final Server server) {
         this.server = server;
     }
 
