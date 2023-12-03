@@ -13,7 +13,6 @@ public class NameTagModule extends AbstractModule {
 
     @Override
     protected void configure() {
-        bind(NameTagProvider.class).to(DefaultNameTagProvider.class).in(Scopes.SINGLETON);
         bind(NameTagFactory.class).to(InternalNameTagFactory.class);
         bind(NameTagService.class).to(InternalNameTagService.class).in(Scopes.SINGLETON);
     }

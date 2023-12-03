@@ -13,7 +13,6 @@ public class SidebarModule extends AbstractModule {
 
     @Override
     protected void configure() {
-        bind(SidebarProvider.class).to(DefaultSidebarProvider.class).in(Scopes.SINGLETON);
         bind(SidebarFactory.class).to(InternalSidebarFactory.class);
         bind(SidebarService.class).to(InternalSidebarService.class).in(Scopes.SINGLETON);
     }

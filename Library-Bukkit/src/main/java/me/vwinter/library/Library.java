@@ -1,7 +1,6 @@
 package me.vwinter.library;
 
 import me.vwinter.library.command.BukkitCommandModule;
-import me.vwinter.library.example.ExampleModule;
 import me.vwinter.library.framework.BukkitProject;
 import me.vwinter.library.menu.MenuModule;
 import me.vwinter.library.nametag.NameTagModule;
@@ -23,6 +22,5 @@ public class Library extends BukkitProject {
         install(new MenuModule());
         install(new SidebarModule());
         install(new NameTagModule());
-        install(new ExampleModule());
     }
 }

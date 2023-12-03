@@ -1,7 +1,6 @@
 package me.vwinter.library;
 
 import me.vwinter.library.command.BungeeCommandModule;
-import me.vwinter.library.example.ExampleModule;
 import me.vwinter.library.framework.BungeeProject;
 import net.md_5.bungee.api.plugin.PluginManager;
 
@@ -17,6 +16,5 @@ public class Library extends BungeeProject {
     @Override
     public void configure() {
         install(new BungeeCommandModule(getInjector().getInstance(PluginManager.class)));
-        install(new ExampleModule());
     }
 }
