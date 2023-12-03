@@ -1,7 +1,42 @@
 # Library-Parent
 
 ## Examples
-### 1. Module
+### 1. Main Class
+
+For bukkit
+```java
+public class BukkitExample extends BukkitProject {
+
+    @Override
+    public Optional<String> getParentPluginName() {
+        return Optional.empty();
+    }
+
+    @Override
+    public void configure() {
+        install(new ExampleModule());
+    }
+}
+```
+For bungee
+```java
+public class BungeeExample extends BungeeProject {
+
+    @Override
+    public Optional<String> getParentPluginName() {
+        return Optional.empty();
+    }
+
+    @Override
+    public void configure() {
+        install(new ExampleModule());
+    }
+}
+
+```
+
+
+### 2. Module
 
 ```java
 public class ExampleModule extends AbstractModule {
@@ -19,7 +54,7 @@ public class ExampleModule extends AbstractModule {
 }
 ```
 
-### 2. Commands
+### 3. Commands
 
 ```java
 @Command(aliases = "poke", description = "Poke someone.")
@@ -30,7 +65,7 @@ public void poke(@Sender Player player, @Argument("player") Player other) {
 }
 ```
 
-### 3. Menu
+### 4. Menu
 
 ```java
 @MenuMeta(aliases = "example", title = "&lTesting")
@@ -56,7 +91,7 @@ public class ExampleMenu implements Menu {
 }
 ```
 
-### 4. Sidebar
+### 5. Sidebar
 
 ```java
 public class TestSidebarProvider implements SidebarProvider {
@@ -91,7 +126,7 @@ public class TestSidebarProvider implements SidebarProvider {
 }
 ```
 
-### 5. Nametag
+### 6. Nametag
 
 ```java
 public class TestNameTagProvider implements NameTagProvider {
