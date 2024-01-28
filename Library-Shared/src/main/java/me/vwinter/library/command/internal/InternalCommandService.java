@@ -155,14 +155,12 @@ public class InternalCommandService implements CommandService {
                     name = parameter.getAnnotation(Argument.class).value();
                 }
 
-                final TypeLiteral<?> typeLiteral = TypeLiteral.get(
-                        new TypeResolver().resolveType(parameter.getType()));
+                final TypeLiteral<?> typeLiteral = TypeLiteral.get(new TypeResolver().resolveType(parameter.getType()));
 
                 final ArgumentParser<?> argumentParser = this.getParser(Key.get(typeLiteral));
                 final CommandSenderProvider<?> provider = this.getProvider(Key.get(typeLiteral));
 
-                parameters.add(new InternalCommandParameter(
-                        typeLiteral, argumentParser, provider, name, argument, optional, injected, sender, text));
+                parameters.add(new InternalCommandParameter(typeLiteral, argumentParser, provider, name, argument, optional, injected, sender, text));
             }
 
             commandContext = new InternalCommandContext(
@@ -170,7 +168,8 @@ public class InternalCommandService implements CommandService {
                     command.permission().equals(Command.Defaults.PERMISSION) && parent != null ? parent.getContext().getPermission() : command.permission(),
                     command.permissionMessage().equals(Command.Defaults.PERMISSION) && parent != null  ? parent.getContext().getPermissionMessage() : command.permissionMessage(),
                     command.description(), command.exceptionMessage(), currentAliases, command.async(), command.usage(), parameters,
-                    parent == null ? null : parent.getContext());
+                    parent == null ? null : parent.getContext()
+            );
         }
 
         return new InternalCommandNode(root, childNodes, parent, commandContext, instance, aClass, method);

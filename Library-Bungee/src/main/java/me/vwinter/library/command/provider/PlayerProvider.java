@@ -17,6 +17,6 @@ public class PlayerProvider implements CommandSenderProvider<ProxiedPlayer> {
 
     @Override
     public String getInvalidSenderMessage(WrappedSender sender) {
-        return "&7Sorry but this command is only executable by players.";
+        return "&cSorry but this command is only executable by players.";
     }
 }

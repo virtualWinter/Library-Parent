@@ -1,6 +1,5 @@
 package me.vwinter.library.storage.named;
 
-
 import me.vwinter.library.storage.Storable;
 import me.vwinter.library.storage.Store;
 

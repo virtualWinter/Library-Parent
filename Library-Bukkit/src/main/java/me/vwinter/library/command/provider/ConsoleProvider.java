@@ -17,6 +17,6 @@ public class ConsoleProvider implements CommandSenderProvider<ConsoleCommandSend
 
     @Override
     public String getInvalidSenderMessage(WrappedSender sender) {
-        return "&7Sorry but this command is only executable by console.";
+        return "&cSorry but this command is only executable by console.";
     }
 }
