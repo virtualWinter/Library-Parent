@@ -1,5 +1,5 @@
 # Library-Parent
-
+ A small library for bukkit and bungeecord plugins. Open sourced it because yes.
 ## Examples
 ### 1. Module
 
